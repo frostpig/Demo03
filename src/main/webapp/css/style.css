@@ -1,0 +1,92 @@
+.well>ul>li {
+    color: #fff;
+    height: 100%
+}
+
+.container-fluid {
+    margin-left: 0px
+}
+
+ul {
+    list-style: none
+}
+
+li {
+    display: inline
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+
+#navbar>ul {
+    text-align: center;
+    padding: 10px;
+}
+
+#navbar>ul>li {
+    display: inline;
+    padding: 5px;
+    margin: 10px;
+    color: #fff;
+    size: 10pt;
+}
+
+#navbar>ul>li>a {
+    color: #fff;
+    size: 10pt;
+}
+
+.container>ul {
+    float: left;
+}
+
+#user-left {
+    color: #333;
+    float: left;
+}
+
+#user-left>a {
+    color: #ed155b
+}
+
+#search {
+    margin: 30px 0 20px;
+    text-align: center;
+    align-content: center;
+}
+
+#search>button {
+    margin-bottom: 15px;
+}
+
+.trangle {
+    position: absolute;
+    top: 13px;
+    right: 6px;
+    overflow: hidden;
+    width: 6px;
+    height: 3px;
+    background-position: 0 0;
+}
+
+.caret01 {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+select{
+    background: #149bdf;
+}
