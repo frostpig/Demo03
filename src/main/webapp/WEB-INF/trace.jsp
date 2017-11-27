@@ -34,7 +34,10 @@
 				url: '/user/check1',
 				method: 'get',
 				idField: 'id',
-				treeField: 'name'
+				treeField: 'name',
+				onClickCell: function(field,row){
+                       getDetail(row);
+                    }
 			">
     <thead>
     <tr>
@@ -58,6 +61,16 @@
         }
     }
 
+   function getDetail(row) {
+       console.log(row.id);
+       alert(row.id);
+   }
+
+
+
+
+
+/*
     function collapseAll() {
         $('#tg').treegrid('collapseAll');
     }
@@ -68,7 +81,7 @@
 
     function expandTo() {
         $('#tg').treegrid('expandTo', 21).treegrid('select', 21);
-    }
+    }*/
 </script>
 </body>
 
