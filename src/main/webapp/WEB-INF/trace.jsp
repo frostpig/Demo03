@@ -20,9 +20,9 @@
 <h2>TreeGrid Actions</h2>
 <p>Click the buttons below to perform actions.</p>
 <div style="margin:20px 0;">
-    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="collapseAll()">CollapseAll</a>
+<%--    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="collapseAll()">CollapseAll</a>
     <a href="javascript:void(0)" class="easyui-linkbutton" onclick="expandAll()">ExpandAll</a>
-    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="expandTo()">ExpandTo</a>
+    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="expandTo()">ExpandTo</a>--%>
 </div>
 <table id="tg" class="easyui-treegrid" title="TreeGrid Actions" style="width:700px;height:250px"
        data-options="
@@ -35,7 +35,7 @@
 				method: 'get',
 				idField: 'id',
 				treeField: 'name',
-				onClickCell: function(field,row){
+				onClickRow: function(row){
                        getDetail(row);
                     }
 			">
@@ -45,25 +45,49 @@
         <th data-options="field:'persons',width:60,align:'right'">Persons</th>
         <th data-options="field:'begin',width:80">Begin Date</th>
         <th data-options="field:'end',width:80">End Date</th>
-        <th data-options="field:'progress',width:120,formatter:formatProgress">Progress</th>
+        <th data-options="field:'详情',width:120">异常</th>
     </tr>
     </thead>
 </table>
 <script type="text/javascript">
     function formatProgress(value) {
-        if (value) {
+        /*if (value) {
             var s = '<div style="width:100%;border:1px solid #ccc">' +
                 '<div style="width:' + value + '%;background:#cc0000;color:#fff">' + value + '%' + '</div>'
             '</div>';
             return s;
         } else {
             return '';
-        }
+        }*/
+        var s = '<a href="index.jsp" style="color: #0e90d2">+value+</a>';
+        return s;
     }
 
    function getDetail(row) {
-       console.log(row.id);
-       alert(row.id);
+//      alert(row);
+       console.log(row);
+       $('#tg').treegrid('insert', {
+           after: row.id,
+           /*data: {
+               id: 38,
+               name: 'name38'
+           }*/
+           iconCls: 'icon-ok',
+           rownumbers: true,
+           animate: true,
+           collapsible: true,
+           fitColumns: true,
+           url: '/user/check1',
+           method: 'get',
+           idField: 'id',
+           columns:[[
+               {title:'Task Name',field:'name',width:180},
+               {field:'persons',title:'Persons',width:60,align:'right'},
+               {field:'begin',title:'Begin Date',width:80},
+               {field:'end',title:'End Date',width:80},
+               {field:'详情',title:'End Date',width:80}
+           ]]
+       });
    }
 
 

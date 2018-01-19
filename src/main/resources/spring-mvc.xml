@@ -53,12 +53,12 @@
 		<mvc:message-converters register-defaults="true">
 			<bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
 				<property name="supportedMediaTypes" value="application/json"/>
-				&lt;!&ndash;设置fastjson特性&ndash;&gt;
+
 				<property name="features">
 					<array>
-						&lt;!&ndash;设置null值也要输出，fastjson默认是关闭的&ndash;&gt;
+
 						<value>WriteMapNullValue</value>
-						&lt;!&ndash;设置使用文本方式输出日期，fastjson默认是long&ndash;&gt;
+
 						<value>WriteDateUseDateFormat</value>
 					</array>
 				</property>
