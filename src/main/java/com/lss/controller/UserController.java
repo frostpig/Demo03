@@ -41,6 +41,12 @@ public class UserController {
         return new ModelAndView("trace");
     }
 
+    @RequestMapping(value = "/search")
+    public ModelAndView search() {
+        Map<String, Object> map = new HashedMap();
+        return new ModelAndView("search");
+    }
+
     @ResponseBody
     @RequestMapping(value = "/check1", method = RequestMethod.GET)
     public Object check1() {
