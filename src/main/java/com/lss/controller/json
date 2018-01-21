@@ -1,0 +1,13 @@
+{"total":7,"rows":[
+                "\t{\"id\":1,\"name\":\"父节点\",\"begin\":\"3/4/2010\",\"end\":\"3/20/2010\",\"spend\":\"30ms\",\"progress\":60,\"iconCls\":\"icon-ok\"},\n" +
+                "\t{\"id\":2,\"name\":\"Designing\",\"begin\":\"3/4/2010\",\"end\":\"3/10/2010\",\"spend\":\"30ms\",\"progress\":100,\"_parentId\":1,\"state\":\"closed\"},\n" +
+                "\t{\"id\":21,\"name\":\"Database\",\"method\":2,\"begin\":\"3/4/2010\",\"end\":\"3/6/2010\",\"spend\":\"30ms\",\"progress\":100,\"_parentId\":2},\n" +
+                "\t{\"id\":22,\"name\":\"UML\",\"method\":1,\"begin\":\"3/7/2010\",\"end\":\"3/8/2010\",\"spend\":\"30ms\",\"progress\":100,\"_parentId\":2},\n" +
+                "\t{\"id\":23,\"name\":\"Export Document\",\"method\":1,\"begin\":\"3/9/2010\",\"end\":\"3/10/2010\",\"spend\":\"30ms\",\"progress\":100,\"_parentId\":2},\n" +
+                "\t{\"id\":3,\"name\":\"Coding\",\"method\":2,\"begin\":\"3/11/2010\",\"end\":\"3/18/2010\",\"spend\":\"30ms\",\"progress\":80},\n" +
+                "\t{\"id\":31,\"name\":\"子节点1\",\"method\":2,\"begin\":\"3/11/2010\",\"end\":\"3/18/2010\",\"spend\":\"30ms\",\"progress\":80},\"_parentId\":3}\n" +
+                "\t{\"id\":32,\"name\":\"子节点2\",\"method\":2,\"begin\":\"3/11/2010\",\"end\":\"3/18/2010\",\"spend\":\"30ms\",\"progress\":80},\"_parentId\":3}\n" +
+                "\t{\"id\":4,\"name\":\"Testing\",\"method\":1,\"begin\":\"3/19/2010\",\"end\":\"3/20/2010\",\"spend\":\"30ms\",\"progress\":20}\n" +
+                "],\"footer\":[\n" +
+                "\t{\"name\":\"Total Persons:\",\"persons\":7,\"iconCls\":\"icon-sum\"}\n" +
+   "]}
