@@ -49,6 +49,7 @@
     </tr>
     </thead>
 </table>
+${msg}
 <script type="text/javascript">
     function formatProgress(value) {
         /*if (value) {
@@ -68,25 +69,10 @@
        console.log(row);
        $('#tg').treegrid('insert', {
            after: row.id,
-           /*data: {
-               id: 38,
-               name: 'name38'
-           }*/
-           iconCls: 'icon-ok',
-           rownumbers: true,
-           animate: true,
-           collapsible: true,
-           fitColumns: true,
-           url: '/user/check1',
-           method: 'get',
-           idField: 'id',
-           columns:[[
-               {title:'Task Name',field:'name',width:180},
-               {field:'persons',title:'Persons',width:60,align:'right'},
-               {field:'begin',title:'Begin Date',width:80},
-               {field:'end',title:'End Date',width:80},
-               {field:'详情',title:'End Date',width:80}
-           ]]
+           data: {
+
+           }
+
        });
    }
 

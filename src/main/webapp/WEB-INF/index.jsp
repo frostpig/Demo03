@@ -12,5 +12,8 @@
     密  码：<input type="text" name="password">
     <input type="submit" value="提交">
 </form>
+<%--
+<a href="/user/search">搜索</a>
+--%>
 </body>
 </html>
