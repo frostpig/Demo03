@@ -6,6 +6,7 @@ import org.apache.commons.logging.LogFactory;
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
+import java.io.IOException;
 
 /**
  * Created by shuangshuangl on 2018/8/22.
@@ -17,6 +18,7 @@ public class WebSocketServerTest {
 
     /**
      * 打开连接时触发
+     *
      * @param relationId
      * @param userCode
      * @param session
@@ -24,27 +26,52 @@ public class WebSocketServerTest {
     @OnOpen
     public void onOpen(@PathParam("relationId") String relationId,
                        @PathParam("userCode") int userCode,
-                       Session session){
+                       Session session) {
         log.info("Websocket Start Connecting: " + SessionUtils.getKey(relationId, userCode));
         SessionUtils.put(relationId, userCode, session);
+
+        try {
+            session.getBasicRemote().sendText("Got your first message (" + relationId + ").Thanks !");
+            int i = 0;
+            while (i < 3) {
+
+                session.getBasicRemote().sendText("Got your later message " + i);
+
+                i++;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
      * 收到客户端消息时触发
+     *
      * @param relationId
      * @param userCode
      * @param message
      * @return
      */
     @OnMessage
-    public String onMessage(@PathParam("relationId") String relationId,
-                            @PathParam("userCode") int userCode,
-                            String message) {
-        return "Got your message (" + message + ").Thanks !";
+    public void onMessage(@PathParam("relationId") String relationId,
+                          @PathParam("userCode") int userCode,
+                          String message, Session session) {
+        try {
+            session.getBasicRemote().sendText("Got your first message (" + message + ").Thanks !");
+            int i = 0;
+
+            while (i < 3) {
+                session.getBasicRemote().sendText("Got your later message " + i);
+                i++;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
      * 异常时触发
+     *
      * @param relationId
      * @param userCode
      * @param session
@@ -61,6 +88,7 @@ public class WebSocketServerTest {
 
     /**
      * 关闭连接时触发
+     *
      * @param relationId
      * @param userCode
      * @param session
