@@ -23,7 +23,6 @@ public class WebSocketMainTest {
         System.out.println("Connecting to " + uri);
         try {
             session = container.connectToServer(WebSocketClientTest.class, URI.create(uri));
-
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -32,7 +31,6 @@ public class WebSocketMainTest {
     public static void main(String args[]){
         WebSocketMainTest client = new WebSocketMainTest();
         client.start();
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String input = "";
         try {
